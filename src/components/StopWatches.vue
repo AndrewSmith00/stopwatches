@@ -6,9 +6,20 @@
       :type="stopwatchType"
     ></stop-watch>
     <div class="add-button__wrapper">
-      <button type="button" class="add-button" @click="addStopwatch('hours')">
-        <span class="add-button__plus-icon"> + </span>
-      </button>
+      <div class="add-button__container">
+        <button type="button" class="add-button" @click="addStopwatch('hours')">
+          <div>ЧАС</div>
+          <div class="add-button__plus-icon"> + </div>
+        </button>
+        <button type="button" class="add-button" @click="addStopwatch('minutes')">
+          <div>МИН</div>
+          <div class="add-button__plus-icon"> + </div>
+        </button>
+        <button type="button" class="add-button" @click="addStopwatch('seconds')">
+          <div>СЕК</div>
+          <div class="add-button__plus-icon"> + </div>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -48,16 +59,26 @@ export default {
   padding-bottom: 45px;
 }
 
-.add-button {
+.add-button__container {
   width: 225px;
   height: 120px;
   background-color: #696969;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-button {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #696969;
   border: none;
-  font-size: 40px;
+  color: #fff;
+  font-size: 16px;
 }
 
 .add-button__plus-icon {
   color: #9e9e9e;
+  font-size: 40px;
   cursor: pointer;
   transition: 0.2s;
   &:hover {
